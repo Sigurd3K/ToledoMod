@@ -76,7 +76,7 @@ http://static6.businessinsider.com/image/55918b77ecad04a3465a0a63/nbc-fires-dona
 	var imageDiv = document.createElement('div');
 	imageDiv.innerHTML = "Testosch";
 	imageDiv.setAttribute('class', 'image-container ng-scope');
-	imageDiv.setAttribute('style', "background: url('http://i.imgur.com/bmSxYMe.jpg') no-repeat center !important; background-size:cover !important;");
+	imageDiv.setAttribute('style', "background: url('http://i.imgur.com/l3EvrGJ.jpg') no-repeat center !important; background-size:cover !important;");
 	// imageDiv.setAttribute('style', "background-size:cover !important;");
 
 	var imgs = document.getElementsByClassName('tol-tile-link');
@@ -111,6 +111,6 @@ http://static6.businessinsider.com/image/55918b77ecad04a3465a0a63/nbc-fires-dona
 	console.log("Greasemonkey Toledomod is running");
 
 	GM_addStyle(
-		".wrapper { //background-image: url('http://i.imgur.com/25b2WZ3.jpg');}" +
+		".wrapper { //background-image: url('http://i.imgur.com/l3EvrGJ.jpg');}" +
 		"// body {background-color: #5f5f5f;}");
 };
