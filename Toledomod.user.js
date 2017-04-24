@@ -33,12 +33,12 @@ var checkExist = setInterval(function() {
 
 var chill = function(){
 	var imageContainer = document.getElementsByClassName('image-container');
+
 	console.log(imageContainer.length);
-	console.log("Patattenstoemp suckt");
 	for (i=0; i<imageContainer.length; i++)
 	{
 		imageContainer[i].parentNode.removeChild(imageContainer[i]);
-		console.log("Lalalalallalala");
+		console.log("LOG: Remove Existing imageContainer");
 	}
 
 	var newDiv = [];
@@ -95,21 +95,20 @@ http://static6.businessinsider.com/image/55918b77ecad04a3465a0a63/nbc-fires-dona
 
 	var imgs = document.getElementsByClassName('tol-tile-link');
 	console.log(imgs.length);
-	console.log("Patattenstoemp suckt");
 
 	for (i=0; i<imgs.length; i++)
 	{
 		title = imgs[i].getElementsByClassName("ng-binding")[0].innerHTML;
 		var originalChilds = imgs[i].innerHTML;
-		console.log("Length customImage in for loop: "+customImage.length);
+		// console.log("Length customImage in for loop: "+customImage.length);
 
 
 		imgs[i].innerHTML = "";
 		imgs[i].appendChild(imageDiv.cloneNode());
 		for (var imgLoop = 0; imgLoop < customImage.length; imgLoop++) {
-			console.log(customImage[imgLoop]);
+			// console.log(customImage[imgLoop]);
 			if (customImage[imgLoop].title == title) {
-				console.log("FirstChild"+imgs[i].firstChild);
+				// console.log("FirstChild"+imgs[i].firstChild);
 				styleString = "background: url('" +
 				customImage[imgLoop].imgSrc +
 				"') no-repeat center !important; background-size:cover !important;";
@@ -118,7 +117,7 @@ http://static6.businessinsider.com/image/55918b77ecad04a3465a0a63/nbc-fires-dona
 			}
 		}
 		imgs[i].innerHTML += originalChilds;
-		console.log("imgs["+i+"]");
+		// console.log("imgs["+i+"]");
 		console.log(title);
 		newDivNumber++;
 	}
