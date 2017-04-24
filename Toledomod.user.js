@@ -73,20 +73,6 @@ http://static6.businessinsider.com/image/55918b77ecad04a3465a0a63/nbc-fires-dona
 		customImage.push({title: "Professional Certification [YP5528]",imgSrc: "https://66.media.tumblr.com/e2cb46eaaa37b72a26ec27d632767aab/tumblr_mncxazxIu71sqw0fjo1_400.gif"});
 
 
-
-
-		// customImage.push({title: "Customer",imgSrc: ""});
-
-
-// Asian girlfriend friender
-// Verspreiden en geld verdienen met dit script
-
-		console.log("ArrayLenght: "+ customImage.length);
-			// {title: "Stip",imgSrc: "http://i.imgur.com/bmSxYMe.jpg"},
-			// {title: "Customer Insights",imgSrc: "http://i.imgur.com/bmSxYMe.jpg"}
-	// end of custom IMAGES
-
-
 	var imageDiv = document.createElement('div');
 	imageDiv.innerHTML = "Testosch";
 	imageDiv.setAttribute('class', 'image-container ng-scope');
