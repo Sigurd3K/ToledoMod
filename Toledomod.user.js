@@ -1,5 +1,5 @@
 ﻿// ==UserScript==
-// @name        Toledomod
+// @name        ToledoMod
 // @namespace   toledomod
 // @description Enhance Toledo
 // @include     *toledo.kuleuven.be/portal*
