@@ -87,7 +87,6 @@ var replaceImageDivs = function(){
 	}
 };
 
-	console.log("Greasemonkey Toledomod is running");
 
 
 };
