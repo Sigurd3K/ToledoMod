@@ -37,55 +37,57 @@ var checkExist = setInterval(function() {
 
 
 var main = function(){
+	replaceImageDivs();
+
+	ChangeStyle();
+
+var replaceImageDivs = function(){
+	// Replace the covers of the courses with our own covers
+	console.log("replaceImageDivs() function");
 	var imageContainers = document.getElementsByClassName('image-container');
 
 	console.log(imageContainers.length);
 	for (i=0; i<imageContainers.length; i++)
 	{
-		imageContainers[i].parentNode.removeChild(imageContainers[i]);
+		imageContainers[i].parentNode.removeChild(imageContainers[i]); // Remove every image container, to remove any preexisting content
 		console.log("LOG: Remove Existing imageContainer");
 	}
 
-	var newDiv = [];
-	newDivNumber = 0;
-
+	// Build new image div and give it attributes
 	var imageDiv = document.createElement('div');
 	imageDiv.innerHTML = "Testosch";
 	imageDiv.setAttribute('class', 'image-container ng-scope');
 	imageDiv.setAttribute('style', "background: url('http://i.imgur.com/l3EvrGJ.jpg') no-repeat center !important; background-size:cover !important;");
-	// imageDiv.setAttribute('style', "background-size:cover !important;");
 
+	// List the tiles of the courses on the main page, so we can use futher query selectors on it in our loop.
 	var imgs = document.getElementsByClassName('tol-tile-link');
 	console.log(imgs.length);
+	console.log(imgs);
 
 	for (i=0; i<imgs.length; i++)
 	{
+		// Get the titles from inside our course tiles so we can link each name to a particular image we chose to use as the cover for that course.
 		title = imgs[i].getElementsByClassName("ng-binding")[0].innerHTML;
-		var originalChilds = imgs[i].innerHTML;
-		// console.log("Length customImage in for loop: "+customImage.length);
+		var originalChilds = imgs[i].innerHTML; // Save other stuff in the tile so we can put our new imagediv in front of it and them add the original content after that.
 
+		imgs[i].innerHTML = ""; // Empty the course tile
+		imgs[i].appendChild(imageDiv.cloneNode()); // Put the new cover in the tile
 
-		imgs[i].innerHTML = "";
-		imgs[i].appendChild(imageDiv.cloneNode());
+		// Look for images in the customImage object, see if it is the same title as in the tile; if so, put them in that place.
 		for (var imgLoop = 0; imgLoop < customImage.length; imgLoop++) {
-			// console.log(customImage[imgLoop]);
 			if (customImage[imgLoop].title == title) {
-				// console.log("FirstChild"+imgs[i].firstChild);
 				styleString = "background: url('" +
 				customImage[imgLoop].imgSrc +
 				"') no-repeat center !important; background-size:cover !important;";
 
-				imgs[i].children[0].setAttribute('style', styleString);
+				imgs[i].children[0].setAttribute('style', styleString); // Add attributes the the node we cloned above.
 			}
 		}
-		imgs[i].innerHTML += originalChilds;
-		// console.log("imgs["+i+"]");
-		console.log(title);
-		newDivNumber++;
+		imgs[i].innerHTML += originalChilds; // Add the original content again, after the new cover.
 	}
+};
 
 	console.log("Greasemonkey Toledomod is running");
 
-ChangeStyle();
 
 };
