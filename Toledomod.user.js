@@ -28,14 +28,15 @@ var checkExist = setInterval(function() {
 		console.log("LOOPS: "+loop[loopCount]+ " " +
 					loop[loopCount-1]+ " " +
 					loop[loopCount-2]);
-		chill();
+		main();
 	}
 	else {
 	console.log("Does not yet exist");
 	}
 }, 200);
 
-var chill = function(){
+
+var main = function(){
 	var imageContainers = document.getElementsByClassName('image-container');
 
 	console.log(imageContainers.length);
