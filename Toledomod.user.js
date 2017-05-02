@@ -36,12 +36,12 @@ var checkExist = setInterval(function() {
 }, 200);
 
 var chill = function(){
-	var imageContainer = document.getElementsByClassName('image-container');
+	var imageContainers = document.getElementsByClassName('image-container');
 
-	console.log(imageContainer.length);
-	for (i=0; i<imageContainer.length; i++)
+	console.log(imageContainers.length);
+	for (i=0; i<imageContainers.length; i++)
 	{
-		imageContainer[i].parentNode.removeChild(imageContainer[i]);
+		imageContainers[i].parentNode.removeChild(imageContainers[i]);
 		console.log("LOG: Remove Existing imageContainer");
 	}
 
