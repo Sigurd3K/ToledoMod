@@ -3,9 +3,10 @@
 // @namespace   toledomod
 // @description Enhance Toledo
 // @include     *toledo.kuleuven.be/portal*
-// @version     1.0.5
+// @version     1.0.6
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require		ToledomodSettings.js
+// @require		StyleChanger.js
 // @grant       GM_addStyle
 // ==/UserScript==
 
@@ -82,7 +83,6 @@ var chill = function(){
 
 	console.log("Greasemonkey Toledomod is running");
 
-	GM_addStyle(
-		".wrapper { //background-image: url('http://i.imgur.com/l3EvrGJ.jpg');}" +
-		"// body {background-color: #5f5f5f;}");
+ChangeStyle();
+
 };
