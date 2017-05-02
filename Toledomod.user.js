@@ -13,14 +13,16 @@
 var itemLength = 0;
 var loopCount = 0;
 var loop = [];
+
+
 var checkExist = setInterval(function() {
-	// Wachten tot al die div's zijn, pagina is niet volledig en wordt bijna voledig door Javascript opgebouwd
-	// AngularJS geeft vertraging
+	// Wachten tot al die div's zijn, pagina is niet volledig en wordt bijna voledig door Javascript opgebouwd.
+	// De AngularJS van Toledo geeft vertraging bij het laden van de pagina.
 
 	loopCount++;
 	loop[loopCount] = $('.tol-tile-link').length;
 
-	// Look for a beter algorithm to check if count is still increasing
+	// TODO: Look for a beter algorithm to check if count is still increasing
 	if ($('.tol-tile-link').length>0 && loop[loopCount] == loop[loopCount-1] && loop[loopCount] == loop[loopCount-2]) {
 		clearInterval(checkExist);
 		console.log("LOOPS: "+loop[loopCount]+ " " +
