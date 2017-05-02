@@ -5,7 +5,7 @@
 // @include     *toledo.kuleuven.be/portal*
 // @version     1.0.5
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
-// @require 	ToledomodSettings.js
+// @require		ToledomodSettings.js
 // @grant       GM_addStyle
 // ==/UserScript==
 
