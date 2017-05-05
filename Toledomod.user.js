@@ -38,11 +38,13 @@ var checkExist = setInterval(function() {
 
 var main = function(){
 	replaceImageDivs();
-
+	console.log("Replimdiv done");
 	ChangeStyle();
+	console.log("Changestyle done");
+};
 
 var replaceImageDivs = function(){
-	// Replace the covers of the courses with our own covers
+	// Replace the covers of the courses with our own covers+
 	console.log("replaceImageDivs() function");
 	var imageContainers = document.getElementsByClassName('image-container');
 
@@ -66,6 +68,7 @@ var replaceImageDivs = function(){
 
 	for (i=0; i<imgs.length; i++)
 	{
+		console.log("Looper imgs length");
 		// Get the titles from inside our course tiles so we can link each name to a particular image we chose to use as the cover for that course.
 		title = imgs[i].getElementsByClassName("ng-binding")[0].innerHTML;
 		var originalChilds = imgs[i].innerHTML; // Save other stuff in the tile so we can put our new imagediv in front of it and them add the original content after that.
@@ -85,8 +88,4 @@ var replaceImageDivs = function(){
 		}
 		imgs[i].innerHTML += originalChilds; // Add the original content again, after the new cover.
 	}
-};
-
-
-
 };
