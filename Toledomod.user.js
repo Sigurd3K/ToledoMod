@@ -1,13 +1,13 @@
 ﻿// ==UserScript==
-// @name        Toledomod
-// @namespace   toledomod
-// @description Enhance Toledo
-// @include     *toledo.kuleuven.be/portal*
-// @version		1.1.7
-// @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
+// @name		Toledomod
+// @namespace	toledomod
+// @description	Enhance Toledo
+// @include		*toledo.kuleuven.be/portal*
+// @version		1.1.8
+// @require		http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require		ToledomodSettings.js
 // @require		StyleChanger.js
-// @grant       GM_addStyle
+// @grant		GM_addStyle
 // ==/UserScript==
 
 var itemLength = 0;
