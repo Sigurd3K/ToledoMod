@@ -3,12 +3,13 @@
 // @namespace	toledomod
 // @description	Enhance Toledo
 // @include		*toledo.kuleuven.be/portal*
-// @version		1.2.1
+// @version		1.2.4
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require		ToledomodSettings.js
 // @require		StyleChanger.js
 // @require		libs/jBox.js
 // @resource	jBoxCSS libs/jBox.css
+// @resource	form form.html
 // @grant		GM_addStyle
 // @grant		GM_getResourceText
 // ==/UserScript==
