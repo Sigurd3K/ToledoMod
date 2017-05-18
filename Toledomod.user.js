@@ -3,7 +3,7 @@
 // @namespace   toledomod
 // @description Enhance Toledo
 // @include     *toledo.kuleuven.be/portal*
-// @version     1.1.1
+// @version		1.1.7
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require		ToledomodSettings.js
 // @require		StyleChanger.js
@@ -41,6 +41,7 @@ var main = function(){
 	console.log("Replimdiv done");
 	ChangeStyle();
 	console.log("Changestyle done");
+	AddControls();
 };
 
 var replaceImageDivs = function(){
@@ -89,3 +90,43 @@ var replaceImageDivs = function(){
 		imgs[i].innerHTML += originalChilds; // Add the original content again, after the new cover.
 	}
 };
+
+var AddControls = function(){
+	console.log("AddControls started");
+	var elementos = document.querySelectorAll('.btn-link[title="Information and settings"]');
+	console.log(elementos.length);
+	console.log("Before listeneder");
+	for (var b = 0; b < elementos.length; b++) {
+		elementos[b].addEventListener('click', i_And_S_clickHandler, false);
+	}
+
+
+	document.querySelector('#tol-toledo').addEventListener("click", i_And_S_clickHandler, false);
+	console.log("AddControls Done");
+
+};
+
+var i_And_S_clickHandler = function(){
+	// Clickhandler for the Info and settings button on the bottom right of each tile.
+	console.log("Clicked");
+	setTimeout(function(){ // Here, We need to wait for AngularJS Again.
+		var currentCourseTileFullTitle = document.querySelectorAll('dt'); // Select al dt elements
+
+		for (var xc = 0; xc < currentCourseTileFullTitle.length; xc++) { // Go through all dt elements in order to search for the "Full title" dt.
+		if (currentCourseTileFullTitle[xc].innerHTML === "Full title") { // When we have this element, we know de course title is next
+			currentCourseTileFullTitle = currentCourseTileFullTitle[xc].nextElementSibling.innerHTML; // Get the course title
+			break;
+		}
+	}
+	console.log(currentCourseTileFullTitle);
+	// Make a new element: The edit cover image link.
+	var li = document.createElement("li");
+	var ahref = document.createElement("a");
+	ahref.appendChild(document.createTextNode("Edit cover image"));
+	li.appendChild(ahref);
+	// Select the li, put it in enrollmentContainer var, append our new element (Edit cover image link)
+	var enrollmentContainer = document.querySelector('#tol-enrollment-information').querySelector('li').parentNode;
+	enrollmentContainer.appendChild(li);
+}, 200);
+};
+
