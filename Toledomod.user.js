@@ -3,7 +3,7 @@
 // @namespace	toledomod
 // @description	Enhance Toledo
 // @include		*toledo.kuleuven.be/portal*
-// @version		1.2.4
+// @version		1.2.7
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require		ToledomodSettings.js
 // @require		StyleChanger.js
@@ -125,11 +125,30 @@ var i_And_S_clickHandler = function(){
 		}
 	}
 	console.log(currentCourseTileFullTitle);
+
+	imageChanger = function(){
+		var imageChangerModal = new jBox('Modal', {
+			delayOpen: 500,
+			delayClose: 1000,
+			width:500,
+			height:100,
+			title: "Change cover image",
+			content: GM_getResourceText("form"),
+			closeButton: true
+		});
+
+		console.log("Modal Manager");
+		imageChangerModal.open();
+		console.log("Modal Manager end");
+	};
+
 	// Make a new element: The edit cover image link.
 	var li = document.createElement("li");
 	var ahref = document.createElement("a");
+	ahref.addEventListener('click', imageChanger, false);
 	ahref.appendChild(document.createTextNode("Edit cover image"));
 	li.appendChild(ahref);
+
 	// Select the li, put it in enrollmentContainer var, append our new element (Edit cover image link)
 	var enrollmentContainer = document.querySelector('#tol-enrollment-information').querySelector('li').parentNode;
 	enrollmentContainer.appendChild(li);
