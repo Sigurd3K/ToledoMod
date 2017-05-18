@@ -3,17 +3,22 @@
 // @namespace	toledomod
 // @description	Enhance Toledo
 // @include		*toledo.kuleuven.be/portal*
-// @version		1.1.8
+// @version		1.1.9
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require		ToledomodSettings.js
 // @require		StyleChanger.js
+// @require		libs/jBox.js
+// @resource	jBoxCSS libs/jBox.css
 // @grant		GM_addStyle
+// @grant		GM_getResourceText
 // ==/UserScript==
 
 var itemLength = 0;
 var loopCount = 0;
 var loop = [];
 
+var jBoxCSS = GM_getResourceText("jBoxCSS");
+GM_addStyle(jBoxCSS);
 
 var checkExist = setInterval(function() {
 	// Wachten tot al die div's zijn, pagina is niet volledig en wordt bijna voledig door Javascript opgebouwd.
