@@ -3,7 +3,7 @@
 // @namespace	toledomod
 // @description	Enhance Toledo
 // @include		*toledo.kuleuven.be/portal*
-// @version		1.2.7
+// @version		1.5.0
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require		ToledomodSettings.js
 // @require		StyleChanger.js
@@ -12,6 +12,8 @@
 // @resource	form form.html
 // @grant		GM_addStyle
 // @grant		GM_getResourceText
+// @grant		GM_setValue
+// @grant		GM_getValue
 // ==/UserScript==
 
 var itemLength = 0;
@@ -83,16 +85,27 @@ var replaceImageDivs = function(){
 		imgs[i].innerHTML = ""; // Empty the course tile
 		imgs[i].appendChild(imageDiv.cloneNode()); // Put the new cover in the tile
 
-		// Look for images in the customImage object, see if it is the same title as in the tile; if so, put them in that place.
-		for (var imgLoop = 0; imgLoop < customImage.length; imgLoop++) {
-			if (customImage[imgLoop].title == title) {
-				styleString = "background: url('" +
-				customImage[imgLoop].imgSrc +
-				"') no-repeat center !important; background-size:cover !important;";
+		var titleFromStorage = GM_getValue(title);
 
-				imgs[i].children[0].setAttribute('style', styleString); // Add attributes the the node we cloned above.
+		if (titleFromStorage !== undefined){
+			styleString = "background: url('" +
+			titleFromStorage +
+			"') no-repeat center !important; background-size:cover !important;";
+
+			imgs[i].children[0].setAttribute('style', styleString); // Add attributes the the node we cloned above.
+		} else {
+			// Look for images in the customImage object, see if it is the same title as in the tile; if so, put them in that place.
+			for (var imgLoop = 0; imgLoop < customImage.length; imgLoop++) {
+				if (customImage[imgLoop].title == title) {
+					styleString = "background: url('" +
+					customImage[imgLoop].imgSrc +
+					"') no-repeat center !important; background-size:cover !important;";
+
+					imgs[i].children[0].setAttribute('style', styleString); // Add attributes the the node we cloned above.
+				}
 			}
 		}
+
 		imgs[i].innerHTML += originalChilds; // Add the original content again, after the new cover.
 	}
 };
@@ -139,7 +152,20 @@ var i_And_S_clickHandler = function(){
 
 		console.log("Modal Manager");
 		imageChangerModal.open();
+		var ImageLocSaveBtnPtr = document.getElementById("ImageLocSaveBtn");
+		ImageLocSaveBtnPtr.addEventListener('click', imageSaver, false);
 		console.log("Modal Manager end");
+
+		function imageSaver(){
+			console.log("ImageSaver");
+			imageLocation = document.getElementById("imageLocationUrl").value;
+			console.log(currentCourseTileFullTitle);
+			console.log(imageLocation);
+			GM_setValue(currentCourseTileFullTitle, imageLocation); // Save course and image location in local storage
+			imageChangerModal.close();
+			imageChangerModal.destroy();
+			replaceImageDivs();
+		}
 	};
 
 	// Make a new element: The edit cover image link.
@@ -154,4 +180,3 @@ var i_And_S_clickHandler = function(){
 	enrollmentContainer.appendChild(li);
 }, 200);
 };
-
