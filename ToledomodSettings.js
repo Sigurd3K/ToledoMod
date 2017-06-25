@@ -12,7 +12,6 @@ var customImage = [
 	{title: "Performance Management [YP5367]",imgSrc: "https://imgflip.com/s/meme/One-Does-Not-Simply.jpg"},
 	{title: "Customer",imgSrc: "http://www.telikin.com/blog/images/shocked_senior_computer_user.jpg"},
 	{title: "Zelfstudiepakket informatievaardigheden",imgSrc: "http://www.telikin.com/blog/images/shocked_senior_computer_user.jpg"},
-	{title: "Thomas More en KU Leuven komen samen op tegen Kanker",imgSrc: "http://funnyworldonline.com/wp-content/uploads/2016/03/SEVERITY-OF-DEAFNESS.jpg"},
 	{title: "Studentenparticipatie",imgSrc: "https://media.tenor.co/images/929d51c854381bfc82a61628d7673c6e/tenor.gif"},
 	{title: "Stage [YP5550]",imgSrc: "http://66.media.tumblr.com/ee17802799382c0568dc3b48a98c40ba/tumblr_mkeqj7gKNe1qjemo2o1_500.gif"},
 	{title: "*** Studentenvalven IM",imgSrc: "http://reactiongifs.me/wp-content/uploads/2013/08/working-hard.gif"},
