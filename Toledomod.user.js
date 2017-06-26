@@ -2,6 +2,7 @@
 // @name		Toledomod
 // @namespace	toledomod
 // @description	Enhance Toledo
+// @author		Sigurd3K
 // @include		*toledo.kuleuven.be/portal*
 // @version		1.5.0
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
