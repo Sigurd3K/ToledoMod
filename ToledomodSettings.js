@@ -8,7 +8,6 @@ var customImage = [
 	{title: "Professional Certification [YP5528]",imgSrc: "http://static6.businessinsider.com/image/55918b77ecad04a3465a0a63/nbc-fires-donald-trump-after-he-calls-mexicans-rapists-and-drug-runners.jpg"},
 	{title: "Database Administration [YP5213]",imgSrc: "https://media.giphy.com/media/14ru6pqZPExCNO/giphy.gif"},
 	{title: "BI roadmap [YP5551]",imgSrc: "https://imgflip.com/s/meme/One-Does-Not-Simply.jpg"},
-	// {title: "Performance Management [YP5367]",imgSrc: "https://ohhoneyno1.files.wordpress.com/2011/05/sleeping_dude.jpg"},
 	{title: "Performance Management [YP5367]",imgSrc: "https://imgflip.com/s/meme/One-Does-Not-Simply.jpg"},
 	{title: "Customer",imgSrc: "http://www.telikin.com/blog/images/shocked_senior_computer_user.jpg"},
 	{title: "Zelfstudiepakket informatievaardigheden",imgSrc: "http://www.telikin.com/blog/images/shocked_senior_computer_user.jpg"},
