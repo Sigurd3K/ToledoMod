@@ -1,9 +1,10 @@
 # Toledomod
 
+No longer maintained.
+
 For Toledo (KU Leuven)
 
 * Change the cover images on your Toledo Tiles. Makes it easier to find a course.
-* **Future:** Dark theme for Toledo.
 
 ## Installation
 
